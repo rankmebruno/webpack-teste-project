@@ -1,13 +1,15 @@
 const path = require('path')
 
+const archiveName = 'index.js'
+
 module.exports = {
     entry: [
         '@babel/polyfill',
-        './src/index.js'
+        path.resolve(__dirname, 'src', archiveName)
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: archiveName
     },
     module: {
         rules: [
